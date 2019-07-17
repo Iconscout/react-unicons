@@ -11,10 +11,10 @@
     "url": "git+https://github.com/Iconscout/react-unicons.git"
   },
   "peerDependencies": {
-    "react": "^15.5.4"
+    "react": "^16.8.6"
   },
   "dependencies": {
-    "react": "^15.5.4"
+    "react": "^16.8.6"
   },
   "keywords": [
     "unicons",
