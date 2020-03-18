@@ -5,7 +5,7 @@ const upperCamelCase = require('uppercamelcase')
 
 const iconsComponentPath = path.join(process.cwd(), 'icons')
 const iconsIndexPath = path.join(process.cwd(), 'index.js')
-const uniconsConfig = require('@iconscout/unicons/icons.json')
+const uniconsConfig = require('@iconscout/unicons/json/line.json')
 
 // Clear Directories
 fs.removeSync(iconsComponentPath)

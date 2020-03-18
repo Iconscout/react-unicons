@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilSquareShape = (props) => {
+const UilLaptopConnection = (props) => {
   const { color, size, ...otherProps } = props
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
@@ -11,18 +11,18 @@ const UilSquareShape = (props) => {
     fill: color,
     ...otherProps
   }, React.createElement('path', {
-    d: 'M17,2H7A5,5,0,0,0,2,7V17a5,5,0,0,0,5,5H17a5,5,0,0,0,5-5V7A5,5,0,0,0,17,2Zm3,15a3,3,0,0,1-3,3H7a3,3,0,0,1-3-3V7A3,3,0,0,1,7,4H17a3,3,0,0,1,3,3Z'
+    d: 'M21,18H14.82A3,3,0,0,0,13,16.18V13h7a1,1,0,0,0,0-2H19V5a3,3,0,0,0-3-3H8A3,3,0,0,0,5,5v6H4a1,1,0,0,0,0,2h7v3.18A3,3,0,0,0,9.18,18H3a1,1,0,0,0,0,2H9.18a3,3,0,0,0,5.64,0H21a1,1,0,0,0,0-2ZM7,11V5A1,1,0,0,1,8,4h8a1,1,0,0,1,1,1v6Zm5,9a1,1,0,1,1,1-1A1,1,0,0,1,12,20Z'
   }));
 };
 
-UilSquareShape.propTypes = {
+UilLaptopConnection.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-UilSquareShape.defaultProps = {
+UilLaptopConnection.defaultProps = {
   color: 'currentColor',
   size: '24',
 };
 
-export default UilSquareShape;
+export default UilLaptopConnection;

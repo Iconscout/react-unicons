@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilSquareShape = (props) => {
+const UilMouseAlt2 = (props) => {
   const { color, size, ...otherProps } = props
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
@@ -11,18 +11,18 @@ const UilSquareShape = (props) => {
     fill: color,
     ...otherProps
   }, React.createElement('path', {
-    d: 'M17,2H7A5,5,0,0,0,2,7V17a5,5,0,0,0,5,5H17a5,5,0,0,0,5-5V7A5,5,0,0,0,17,2Zm3,15a3,3,0,0,1-3,3H7a3,3,0,0,1-3-3V7A3,3,0,0,1,7,4H17a3,3,0,0,1,3,3Z'
+    d: 'M12,2A7,7,0,0,0,5,9v6a7,7,0,0,0,14,0V9A7,7,0,0,0,12,2Zm5,13A5,5,0,0,1,7,15V9a5,5,0,0,1,4-4.9V12a1,1,0,0,0,2,0V4.1A5,5,0,0,1,17,9Z'
   }));
 };
 
-UilSquareShape.propTypes = {
+UilMouseAlt2.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-UilSquareShape.defaultProps = {
+UilMouseAlt2.defaultProps = {
   color: 'currentColor',
   size: '24',
 };
 
-export default UilSquareShape;
+export default UilMouseAlt2;

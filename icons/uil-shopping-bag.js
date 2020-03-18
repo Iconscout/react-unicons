@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilSquareShape = (props) => {
+const UilShoppingBag = (props) => {
   const { color, size, ...otherProps } = props
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
@@ -11,18 +11,18 @@ const UilSquareShape = (props) => {
     fill: color,
     ...otherProps
   }, React.createElement('path', {
-    d: 'M17,2H7A5,5,0,0,0,2,7V17a5,5,0,0,0,5,5H17a5,5,0,0,0,5-5V7A5,5,0,0,0,17,2Zm3,15a3,3,0,0,1-3,3H7a3,3,0,0,1-3-3V7A3,3,0,0,1,7,4H17a3,3,0,0,1,3,3Z'
+    d: 'M19,7H16V6A4,4,0,0,0,8,6V7H5A1,1,0,0,0,4,8V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V8A1,1,0,0,0,19,7ZM10,6a2,2,0,0,1,4,0V7H10Zm8,13a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V9H8v1a1,1,0,0,0,2,0V9h4v1a1,1,0,0,0,2,0V9h2Z'
   }));
 };
 
-UilSquareShape.propTypes = {
+UilShoppingBag.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-UilSquareShape.defaultProps = {
+UilShoppingBag.defaultProps = {
   color: 'currentColor',
   size: '24',
 };
 
-export default UilSquareShape;
+export default UilShoppingBag;

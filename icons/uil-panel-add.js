@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilSquareShape = (props) => {
+const UilPanelAdd = (props) => {
   const { color, size, ...otherProps } = props
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
@@ -11,18 +11,18 @@ const UilSquareShape = (props) => {
     fill: color,
     ...otherProps
   }, React.createElement('path', {
-    d: 'M17,2H7A5,5,0,0,0,2,7V17a5,5,0,0,0,5,5H17a5,5,0,0,0,5-5V7A5,5,0,0,0,17,2Zm3,15a3,3,0,0,1-3,3H7a3,3,0,0,1-3-3V7A3,3,0,0,1,7,4H17a3,3,0,0,1,3,3Z'
+    d: 'M18,10H14V3a1,1,0,0,0-1-1H8A1,1,0,0,0,7,3V8H3A1,1,0,0,0,2,9V21a1,1,0,0,0,1,1H18a1,1,0,0,0,1-1V11A1,1,0,0,0,18,10ZM7,20H4V10H7Zm5,0H9V4h3Zm5,0H14V12h3ZM21,4H20V3a1,1,0,0,0-2,0V4H17a1,1,0,0,0,0,2h1V7a1,1,0,0,0,2,0V6h1a1,1,0,0,0,0-2Z'
   }));
 };
 
-UilSquareShape.propTypes = {
+UilPanelAdd.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-UilSquareShape.defaultProps = {
+UilPanelAdd.defaultProps = {
   color: 'currentColor',
   size: '24',
 };
 
-export default UilSquareShape;
+export default UilPanelAdd;

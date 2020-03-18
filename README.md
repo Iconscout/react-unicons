@@ -12,6 +12,7 @@ Or using `yarn`
 yarn add @iconscout/react-unicons
 ```
 
+## Usage
 ### Use individual icons
 ```js
 import React from 'react';
@@ -42,8 +43,10 @@ export default App;
 ````
 
 ### More ways
-- [Icon Font](https://github.com/Iconscout/unicons)
+- [React-native-unicons](https://github.com/Iconscout/react-native-unicons)
 - [Vue-unicons](https://github.com/antonreshetov/vue-unicons) by [Anton Reshetov](https://github.com/antonreshetov)
+- [Vector SVGs](https://iconscout.com/unicons)
+- [Icon Font](https://github.com/Iconscout/unicons)
 
 ## Contributing
 We will be happy to have community support for Unicons. Feel free to fork and create pull requests. We have given a small roadmap above so that you can help us build these features.

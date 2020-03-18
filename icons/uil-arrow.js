@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilSquareShape = (props) => {
+const UilArrow = (props) => {
   const { color, size, ...otherProps } = props
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
@@ -11,18 +11,18 @@ const UilSquareShape = (props) => {
     fill: color,
     ...otherProps
   }, React.createElement('path', {
-    d: 'M17,2H7A5,5,0,0,0,2,7V17a5,5,0,0,0,5,5H17a5,5,0,0,0,5-5V7A5,5,0,0,0,17,2Zm3,15a3,3,0,0,1-3,3H7a3,3,0,0,1-3-3V7A3,3,0,0,1,7,4H17a3,3,0,0,1,3,3Z'
+    d: 'M9.71,6.29a1,1,0,0,0-1.42,0l-5,5a1,1,0,0,0,0,1.42l5,5a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L5.41,12l4.3-4.29A1,1,0,0,0,9.71,6.29Zm11,5-5-5a1,1,0,0,0-1.42,1.42L18.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l5-5A1,1,0,0,0,20.71,11.29Z'
   }));
 };
 
-UilSquareShape.propTypes = {
+UilArrow.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-UilSquareShape.defaultProps = {
+UilArrow.defaultProps = {
   color: 'currentColor',
   size: '24',
 };
 
-export default UilSquareShape;
+export default UilArrow;
