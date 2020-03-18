@@ -1,7 +1,7 @@
 {
   "name": "@iconscout/react-unicons",
-  "version": "0.0.1",
-  "description": "1000+ vector icons as easy to use React Components",
+  "version": "1.0.0",
+  "description": "1100+ vector icons as easy to use React Components",
   "main": "index.js",
   "scripts": {
     "generate": "node ./build/generate.js"
