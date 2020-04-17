@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilExclamationCircle = (props) => {
+const UilStethoscope = (props) => {
   const { color, size, ...otherProps } = props
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
@@ -11,18 +11,18 @@ const UilExclamationCircle = (props) => {
     fill: color,
     ...otherProps
   }, React.createElement('path', {
-    d: 'M12,14a1,1,0,1,0,1,1A1,1,0,0,0,12,14ZM12,2A10,10,0,1,0,22,12,10.01114,10.01114,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.00917,8.00917,0,0,1,12,20ZM12,8a1,1,0,0,0-1,1v3a1,1,0,0,0,2,0V9A1,1,0,0,0,12,8Z'
+    d: 'M19,8a2.99253,2.99253,0,0,0-1,5.81567V15.5a4.5,4.5,0,0,1-9,0v-.59033A6.00448,6.00448,0,0,0,14,9V3a1,1,0,0,0-1-1H11a1,1,0,0,0,0,2h1V9A4,4,0,0,1,4,9V4H5A1,1,0,0,0,5,2H3A1,1,0,0,0,2,3V9a6.00448,6.00448,0,0,0,5,5.90967V15.5a6.5,6.5,0,0,0,13,0V13.81573A2.99257,2.99257,0,0,0,19,8Zm0,4a1,1,0,1,1,1-1A1.0013,1.0013,0,0,1,19,12Z'
   }));
 };
 
-UilExclamationCircle.propTypes = {
+UilStethoscope.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-UilExclamationCircle.defaultProps = {
+UilStethoscope.defaultProps = {
   color: 'currentColor',
   size: '24',
 };
 
-export default UilExclamationCircle;
+export default UilStethoscope;
