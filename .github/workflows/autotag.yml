@@ -1,0 +1,19 @@
+name: Create Tag on package.json update
+
+on:
+  push:
+    branches:    
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        token: '${{ secrets.GH_AUTH_TOKEN }}'
+        fetch-depth: 0
+    - uses: butlerlogic/action-autotag@master
+      with:
+        GITHUB_TOKEN: "${{ secrets.GH_AUTH_TOKEN }}"
+        tag_prefix: "v"
