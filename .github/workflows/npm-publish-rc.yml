@@ -1,0 +1,28 @@
+name: Publish to NPM RC
+
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches: 
+      - 'release-*'
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.16.3
+      - name: Download & Build Icons
+        run: npm ci --progress=false && npm i @iconscout/unicons@latest && npm run generate
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v1
+        with:
+          token: ${{ secrets.GH_AUTH_TOKEN }}
+          title: Updated Icons
+      - name: Publish to NPM
+        uses: primer/publish@v2.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
