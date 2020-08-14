@@ -1,0 +1,25 @@
+name: Publish to NPM PRO
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.16.3
+      - name: Install NPM
+        run: npm ci --progress=false
+      - name: Set Gemfury Config
+        run: printf "@iconscout:registry=https://npm-proxy.fury.io/iconscout/\n//npm-proxy.fury.io/iconscout/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.FURY_AUTH_TOKEN }}
+      - name: Download & Build Icons
+        run: npm i @iconscout/unicons@latest && npm run generate
+      - name: Publish to Gemfury
+        run: npm publish
