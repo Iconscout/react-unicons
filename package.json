@@ -13,10 +13,10 @@
     "url": "git+https://github.com/Iconscout/react-unicons.git"
   },
   "peerDependencies": {
-    "react": ">=15.0.0 <17.0.0"
+    "react": ">=15.0.0 <18.0.0"
   },
   "dependencies": {
-    "react": ">=15.0.0 <17.0.0"
+    "react": ">=15.0.0 <18.0.0"
   },
   "keywords": [
     "unicons",
