@@ -1,6 +1,6 @@
 {
   "name": "@iconscout/react-unicons",
-  "version": "1.1.6",
+  "version": "^1.1.7",
   "description": "1100+ vector icons as easy to use React Components",
   "main": "./lib/cjs/index.js",
   "module": "/index.js",
@@ -33,7 +33,7 @@
   },
   "homepage": "https://iconscout.com/unicons",
   "devDependencies": {
-    "@iconscout/unicons": "^3.0.5",
+    "@iconscout/unicons": "^4.0.1",
     "cheerio": "^1.0.0-rc.3",
     "fs-plus": "^3.1.1",
     "uppercamelcase": "^3.0.0",
