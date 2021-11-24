@@ -20,6 +20,6 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.FURY_AUTH_TOKEN }}
       - name: Download & Build Icons
-        run: npm i @iconscout/unicons@latest && npm run generate
+        run: npm i @iconscout/unicons@latest && npm run generate && npm run build:types && npm run build:js
       - name: Publish to Gemfury
         run: npm publish

@@ -1,12 +1,15 @@
 {
   "name": "@iconscout/react-unicons",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "description": "1100+ vector icons as easy to use React Components",
-  "main": "./lib/cjs/index.js",
-  "module": "/index.js",
+  "types": "./index.d.ts",
+  "main": "./index.js",
+  "module": "./index.js",
   "sideEffects": false,
   "scripts": {
-    "generate": "node ./build/generate.js && webpack"
+    "generate": "node ./build/generate.js",
+    "build:types": "tsc",
+    "build:js": "babel ./ --out-dir . --extensions \".ts,.tsx\""
   },
   "repository": {
     "type": "git",
@@ -33,11 +36,17 @@
   },
   "homepage": "https://iconscout.com/unicons",
   "devDependencies": {
-    "@iconscout/unicons": "^3.0.5",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@iconscout/unicons": "^4.0.1",
+    "@types/react": "^17.0.36",
+    "babel-plugin-typescript-to-proptypes": "^2.0.0",
     "cheerio": "^1.0.0-rc.3",
     "fs-plus": "^3.1.1",
-    "uppercamelcase": "^3.0.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "typescript": "^4.5.2",
+    "uppercamelcase": "^3.0.0"
   }
 }

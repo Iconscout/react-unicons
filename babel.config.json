@@ -1,0 +1,19 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "babel-plugin-typescript-to-proptypes",
+      {
+        "comments": true
+      }
+    ]
+  ],
+  "ignore": [
+    "node_modules",
+    "**/*.d.ts"
+  ]
+}
