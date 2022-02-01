@@ -36,6 +36,7 @@ const ${name} = (props) => {
     width: size,
     height: size,
     viewBox: '0 0 24 24',
+    className: 'iconscout_react_unicons iconscout_react_unicons_${baseName}',
     ...otherProps
   }, React.createElement('path', {
     d: '${svgPath}'
