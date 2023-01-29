@@ -4,7 +4,6 @@ node_modules
 !**/*.d.ts
 /example/
 /.idea/
-/babel.config.json
 /tsconfig.json
 /.github/
 /build/
