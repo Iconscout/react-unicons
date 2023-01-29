@@ -9,7 +9,8 @@
   "scripts": {
     "generate": "node ./build/generate.js",
     "build": "tsup",
-    "postinstall": "npm run build"
+    "prepare": "npm run build",
+    "prepack": "npm run build"
   },
   "repository": {
     "type": "git",
