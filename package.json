@@ -8,7 +8,7 @@
   "sideEffects": false,
   "scripts": {
     "generate": "node ./build/generate.js",
-    "build": "tsc && tsup",
+    "build": "tsup",
     "prepare": "npm run build"
   },
   "repository": {

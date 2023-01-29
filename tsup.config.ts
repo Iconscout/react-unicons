@@ -2,7 +2,7 @@ import {defineConfig, Options} from 'tsup'
 
 const commonConfig: Options = {
     outDir: 'dist',
-    clean: true,
+    // clean: true,
     format: ['cjs', 'esm'],
     dts: true
 }
