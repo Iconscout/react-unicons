@@ -1,2 +1,7 @@
 node_modules
 lib
+**/*.d.ts
+**/*.jsx
+**/*.js
+/.idea/
+/dist/

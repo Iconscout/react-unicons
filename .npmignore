@@ -1,2 +1,9 @@
 node_modules
-example
+**/*.ts
+**/*.tsx
+!**/*.d.ts
+/example/
+/.idea/
+/tsconfig.json
+/.github/
+/build/
