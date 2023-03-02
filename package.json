@@ -1,7 +1,7 @@
 {
   "name": "@iconscout/react-unicons",
-  "version": "1.1.6",
-  "description": "1100+ vector icons as easy to use React Components",
+  "version": "2.0.0",
+  "description": "4,500+ vector icons as easy to use React Components",
   "main": "./lib/cjs/index.js",
   "module": "/index.js",
   "sideEffects": false,
@@ -26,14 +26,14 @@
     "vector",
     "icons"
   ],
-  "author": "Iconscout",
-  "license": "Apache-2.0",
+  "author": "IconScout",
+  "license": "IconScout Simple License",
   "bugs": {
     "url": "https://github.com/Iconscout/react-unicons/issues"
   },
   "homepage": "https://iconscout.com/unicons",
   "devDependencies": {
-    "@iconscout/unicons": "^3.0.5",
+    "@iconscout/unicons": "^4.0.6",
     "cheerio": "^1.0.0-rc.3",
     "fs-plus": "^3.1.1",
     "uppercamelcase": "^3.0.0",

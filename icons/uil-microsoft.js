@@ -11,7 +11,7 @@ const UilMicrosoft = (props) => {
     fill: color,
     ...otherProps
   }, React.createElement('path', {
-    d: 'M2,22h9.5v-9.5H2V22z M2,11.5h9.5V2H2V11.5z M12.5,2v9.5H22V2H12.5z M12.5,22H22v-9.5h-9.5V22z'
+    d: 'M2 22h9.5v-9.5H2V22zm0-10.5h9.5V2H2v9.5zM12.5 2v9.5H22V2h-9.5zm0 20H22v-9.5h-9.5V22z'
   }));
 };
 
