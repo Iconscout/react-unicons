@@ -5,6 +5,7 @@ const upperCamelCase = require('uppercamelcase')
 
 const iconsComponentPath = path.join(process.cwd(), 'icons')
 const iconsIndexPath = path.join(process.cwd(), 'index.js')
+const iconsTypesPath = path.join(process.cwd(), 'index.d.ts')
 const uniconsConfig = require('@iconscout/unicons/json/line.json')
 
 // Clear Directories
@@ -12,6 +13,7 @@ fs.removeSync(iconsComponentPath)
 fs.mkdirSync(iconsComponentPath)
 
 const indexJs = []
+const types = []
 
 uniconsConfig.forEach(icon => {
   const baseName = `uil-${icon.name}`
@@ -59,8 +61,23 @@ export default ${name};`
 
   // Add it to index.js
   indexJs.push(`export { default as ${name} } from './icons/${baseName}'`)
+  types.push(`  export const ${name}: Unicon;`)
 })
 
 fs.writeFileSync(iconsIndexPath, indexJs.join('\n'), 'utf-8')
+fs.writeFileSync(
+  iconsTypesPath,
+  `declare module '@iconscout/react-unicons' {
+  import { SVGProps } from 'react';
+
+  export type UniconProps = {
+    color?: string;
+    size?: string | number;
+  } & SVGProps<SVGElement>;
+
+${types.join('\n')}
+}`,
+  'utf-8'
+)
 
 console.log(`Generated ${uniconsConfig.length} icon components.`)
