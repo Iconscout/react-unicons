@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Uil0Plus = (props) => {
-  const { color, size, ...otherProps } = props
+const Uil0Plus = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const Uil0Plus = (props) => {
 Uil0Plus.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Uil0Plus.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Uil0Plus;

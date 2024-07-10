@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilMehAlt = (props) => {
-  const { color, size, ...otherProps } = props
+const UilMehAlt = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilMehAlt = (props) => {
 UilMehAlt.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilMehAlt.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilMehAlt;

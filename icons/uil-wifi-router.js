@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilWifiRouter = (props) => {
-  const { color, size, ...otherProps } = props
+const UilWifiRouter = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilWifiRouter = (props) => {
 UilWifiRouter.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilWifiRouter.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilWifiRouter;

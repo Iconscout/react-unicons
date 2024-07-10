@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilWindowSection = (props) => {
-  const { color, size, ...otherProps } = props
+const UilWindowSection = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilWindowSection = (props) => {
 UilWindowSection.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilWindowSection.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilWindowSection;

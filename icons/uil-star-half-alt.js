@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilStarHalfAlt = (props) => {
-  const { color, size, ...otherProps } = props
+const UilStarHalfAlt = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilStarHalfAlt = (props) => {
 UilStarHalfAlt.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilStarHalfAlt.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilStarHalfAlt;
