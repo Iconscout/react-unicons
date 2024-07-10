@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilRotate360 = (props) => {
-  const { color, size, ...otherProps } = props
+const UilRotate360 = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilRotate360 = (props) => {
 UilRotate360.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilRotate360.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilRotate360;

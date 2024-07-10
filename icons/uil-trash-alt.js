@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilTrashAlt = (props) => {
-  const { color, size, ...otherProps } = props
+const UilTrashAlt = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilTrashAlt = (props) => {
 UilTrashAlt.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilTrashAlt.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilTrashAlt;

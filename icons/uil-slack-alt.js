@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilSlackAlt = (props) => {
-  const { color, size, ...otherProps } = props
+const UilSlackAlt = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilSlackAlt = (props) => {
 UilSlackAlt.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilSlackAlt.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilSlackAlt;
