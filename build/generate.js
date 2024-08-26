@@ -66,18 +66,18 @@ export default ${name};`
 
 fs.writeFileSync(iconsIndexPath, indexJs.join('\n'), 'utf-8')
 fs.writeFileSync(
-  iconsTypesPath,
-  `declare module '@iconscout/react-unicons' {
+    iconsTypesPath,
+    `declare module '@iconscout/react-unicons' {
   import { SVGProps } from 'react';
-
   export type UniconProps = {
     color?: string;
     size?: string | number;
   } & SVGProps<SVGElement>;
+  export type Unicon = (props: UniconProps) => JSX.Element;
 
 ${types.join('\n')}
 }`,
-  'utf-8'
+    'utf-8'
 )
 
 console.log(`Generated ${uniconsConfig.length} icon components.`)
