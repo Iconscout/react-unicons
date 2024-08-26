@@ -1,9 +1,10 @@
 {
   "name": "@iconscout/react-unicons",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "4,500+ vector icons as easy to use React Components",
   "main": "./lib/cjs/index.js",
   "module": "/index.js",
+  "types": "/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "generate": "node ./build/generate.js && webpack"
