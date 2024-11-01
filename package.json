@@ -37,7 +37,7 @@
     "cheerio": "^1.0.0-rc.3",
     "fs-plus": "^3.1.1",
     "uppercamelcase": "^3.0.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^5.96.0",
+    "webpack-cli": "^5.1.4"
   }
 }
