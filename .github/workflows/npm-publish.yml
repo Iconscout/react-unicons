@@ -3,19 +3,20 @@ name: Publish to NPM
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 10.16.3
+          node-version: 22.11.0
+          registry-url: "https://registry.npmjs.org"
       - name: Download & Build Icons
         run: npm ci --progress=false && npm i @iconscout/unicons@latest && npm run generate
       - name: Publish to NPM
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc && npm publish
+        run: npm publish
         env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
