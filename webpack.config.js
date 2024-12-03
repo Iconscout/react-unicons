@@ -6,10 +6,17 @@ module.exports = {
     path: path.resolve(__dirname, "lib", "cjs"),
     filename: "index.js",
     globalObject: "this",
-    libraryTarget: "umd",
+    library: {
+      type: "umd",
+    },
+    clean: true,
   },
   externals: {
     react: "react",
   },
   mode: "production",
+  optimization: {
+    minimize: true,
+  },
+  target: "web",
 };
