@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilVolumeDown = (props) => {
-  const { color, size, ...otherProps } = props
+const UilVolumeDown = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilVolumeDown = (props) => {
 UilVolumeDown.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilVolumeDown.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilVolumeDown;

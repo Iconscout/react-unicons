@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilHtml5Alt = (props) => {
-  const { color, size, ...otherProps } = props
+const UilHtml5Alt = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilHtml5Alt = (props) => {
 UilHtml5Alt.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilHtml5Alt.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilHtml5Alt;

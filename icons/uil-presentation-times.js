@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilPresentationTimes = (props) => {
-  const { color, size, ...otherProps } = props
+const UilPresentationTimes = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilPresentationTimes = (props) => {
 UilPresentationTimes.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilPresentationTimes.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilPresentationTimes;

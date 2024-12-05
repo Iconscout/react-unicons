@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilWaterDropSlash = (props) => {
-  const { color, size, ...otherProps } = props
+const UilWaterDropSlash = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilWaterDropSlash = (props) => {
 UilWaterDropSlash.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilWaterDropSlash.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilWaterDropSlash;
