@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilTornado = (props) => {
-  const { color, size, ...otherProps } = props
+const UilTornado = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilTornado = (props) => {
 UilTornado.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilTornado.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilTornado;

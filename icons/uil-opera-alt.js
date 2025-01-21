@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilOperaAlt = (props) => {
-  const { color, size, ...otherProps } = props
+const UilOperaAlt = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilOperaAlt = (props) => {
 UilOperaAlt.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilOperaAlt.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilOperaAlt;
