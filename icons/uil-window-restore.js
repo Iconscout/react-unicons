@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilBrowser = ({ color = 'currentColor', size = '24', ...otherProps }) => {
+const UilWindowRestore = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -14,9 +14,9 @@ const UilBrowser = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   }));
 };
 
-UilBrowser.propTypes = {
+UilWindowRestore.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-export default UilBrowser;
+export default UilWindowRestore;
