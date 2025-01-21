@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilTelegram = (props) => {
-  const { color, size, ...otherProps } = props
+const UilTelegram = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilTelegram = (props) => {
 UilTelegram.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilTelegram.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilTelegram;

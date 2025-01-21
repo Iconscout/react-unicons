@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilForecastcloudMoonTear = (props) => {
-  const { color, size, ...otherProps } = props
+const UilCloudMoonTear = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -15,14 +14,9 @@ const UilForecastcloudMoonTear = (props) => {
   }));
 };
 
-UilForecastcloudMoonTear.propTypes = {
+UilCloudMoonTear.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-UilForecastcloudMoonTear.defaultProps = {
-  color: 'currentColor',
-  size: '24',
-};
-
-export default UilForecastcloudMoonTear;
+export default UilCloudMoonTear;

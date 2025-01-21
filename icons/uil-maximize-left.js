@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilMaximizeLeft = (props) => {
-  const { color, size, ...otherProps } = props
+const UilMaximizeLeft = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilMaximizeLeft = (props) => {
 UilMaximizeLeft.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilMaximizeLeft.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilMaximizeLeft;

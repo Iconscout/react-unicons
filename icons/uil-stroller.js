@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilBabyCarriage = (props) => {
-  const { color, size, ...otherProps } = props
+const UilStroller = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -15,14 +14,9 @@ const UilBabyCarriage = (props) => {
   }));
 };
 
-UilBabyCarriage.propTypes = {
+UilStroller.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-UilBabyCarriage.defaultProps = {
-  color: 'currentColor',
-  size: '24',
-};
-
-export default UilBabyCarriage;
+export default UilStroller;

@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilExclamation = (props) => {
-  const { color, size, ...otherProps } = props
+const UilExclamation = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilExclamation = (props) => {
 UilExclamation.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilExclamation.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilExclamation;

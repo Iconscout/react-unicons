@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UilCopyright = (props) => {
-  const { color, size, ...otherProps } = props
+const UilCopyright = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return React.createElement('svg', {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -18,11 +17,6 @@ const UilCopyright = (props) => {
 UilCopyright.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UilCopyright.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UilCopyright;
