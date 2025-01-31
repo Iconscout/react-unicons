@@ -1,60 +1,95 @@
 const path = require('path')
-const fs = require('fs-plus')
+const fs = require('fs-extra')
 const cheerio = require('cheerio')
 const upperCamelCase = require('uppercamelcase')
 
-const iconsComponentPath = path.join(process.cwd(), 'icons')
-const iconsIndexPath = path.join(process.cwd(), 'index.js')
+// Ensure the src directory exists
+const srcPath = path.join(process.cwd(), 'src')
+
+fs.removeSync(srcPath)
+fs.mkdirSync(srcPath)
+
+const iconsPath = path.join(srcPath, 'icons') // Single directory for all icons
+const iconsIndexPath = path.join(srcPath, 'index.ts')
 const uniconsConfig = require('@iconscout/unicons/json/line.json')
 
 // Clear Directories
-fs.removeSync(iconsComponentPath)
-fs.mkdirSync(iconsComponentPath)
+fs.removeSync(iconsPath)
+fs.mkdirSync(iconsPath)
 
-const indexJs = []
+const indexTs = [
+  `import { SVGProps } from 'react'
 
-uniconsConfig.forEach(icon => {
-  const baseName = `uil-${icon.name}`
-  const location = path.join(iconsComponentPath, `${baseName}.js`)
-  const name = upperCamelCase(baseName)
-  const svgFile = fs.readFileSync(path.resolve('node_modules/@iconscout/unicons', icon.svg), 'utf-8')
+export interface IconProps extends SVGProps<SVGElement> {
+  size?: string | number
+  color?: string
+}
+`,
+]
 
-  let data = svgFile.replace(/<svg[^>]+>/gi, '').replace(/<\/svg>/gi, '')
-  // Get Path Content from SVG
-  const $ = cheerio.load(data, {
-    xmlMode: true
+try {
+  uniconsConfig.forEach((icon) => {
+    const baseName = `uil-${icon.name}`
+    const name = upperCamelCase(baseName)
+
+    try {
+      const svgFile = fs.readFileSync(
+        path.resolve('node_modules/@iconscout/unicons', icon.svg),
+        'utf-8'
+      )
+
+      let data = svgFile.replace(/<svg[^>]+>/gi, '').replace(/<\/svg>/gi, '')
+
+      const $ = cheerio.load(data, {
+        xmlMode: true,
+      })
+      const svgPath = $('path').attr('d')
+
+      if (!svgPath) {
+        console.warn(`Warning: No path found for icon ${name}`)
+        return
+      }
+
+      const componentContent = `import * as React from 'react'
+import { IconProps } from '../index'
+
+const ${name} = ({
+  color = 'currentColor',
+  size = 24,
+  ...props
+}: IconProps) => {
+  return React.createElement(
+    'svg',
+    {
+      xmlns: 'http://www.w3.org/2000/svg',
+      viewBox: '0 0 24 24',
+      width: size,
+      height: size,
+      fill: color,
+      ...props
+    },
+    React.createElement('path', {
+      d: '${svgPath}'
+    })
+  )
+}
+
+export default ${name}`
+
+      // Write file once
+      fs.writeFileSync(path.join(iconsPath, `${baseName}.ts`), componentContent)
+
+      // Add to main index exports
+      indexTs.push(`export { default as ${name} } from './icons/${baseName}'`)
+    } catch (err) {
+      console.error(`Error processing icon ${name}:`, err)
+    }
   })
-  const svgPath = $('path').attr('d')
 
-  const template = `import React from 'react';
-import PropTypes from 'prop-types';
+  fs.writeFileSync(iconsIndexPath, indexTs.join('\n'), 'utf-8')
 
-const ${name} = ({ color = 'currentColor', size = '24', ...otherProps }) => {
-  return React.createElement('svg', {
-    xmlns: 'http://www.w3.org/2000/svg',
-    width: size,
-    height: size,
-    viewBox: '0 0 24 24',
-    fill: color,
-    ...otherProps
-  }, React.createElement('path', {
-    d: '${svgPath}'
-  }));
-};
-
-${name}.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-export default ${name};`
-
-  fs.writeFileSync(location, template, 'utf-8')
-
-  // Add it to index.js
-  indexJs.push(`export { default as ${name} } from './icons/${baseName}'`)
-})
-
-fs.writeFileSync(iconsIndexPath, indexJs.join('\n'), 'utf-8')
-
-console.log(`Generated ${uniconsConfig.length} icon components.`)
+  console.log(`✓ Generated ${uniconsConfig.length} icon components`)
+} catch (err) {
+  console.error('Error during generation:', err)
+  process.exit(1)
+}

@@ -1,0 +1,25 @@
+import * as React from 'react'
+import { IconProps } from '../index'
+
+const UilMeetingBoard = ({
+  color = 'currentColor',
+  size = 24,
+  ...props
+}: IconProps) => {
+  return React.createElement(
+    'svg',
+    {
+      xmlns: 'http://www.w3.org/2000/svg',
+      viewBox: '0 0 24 24',
+      width: size,
+      height: size,
+      fill: color,
+      ...props
+    },
+    React.createElement('path', {
+      d: 'M7,10H9A1,1,0,0,0,9,8H7a1,1,0,0,0,0,2ZM21,4H13V3a1,1,0,0,0-2,0V4H3A1,1,0,0,0,2,5V15a3,3,0,0,0,3,3H9.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L11,19.41V21a1,1,0,0,0,2,0V19.41l2.29,2.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L14.41,18H19a3,3,0,0,0,3-3V5A1,1,0,0,0,21,4ZM20,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V6H20ZM7,14h6a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z'
+    })
+  )
+}
+
+export default UilMeetingBoard

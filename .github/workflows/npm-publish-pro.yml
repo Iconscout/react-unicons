@@ -3,7 +3,7 @@ name: Publish to NPM PRO
 on:
   push:
     tags:
-      - "*"
+      - '*'
 
 jobs:
   publish-npm:
@@ -21,7 +21,7 @@ jobs:
         run: |
           npm ci --progress=false
           npm i @iconscout/unicons@latest
-          npm run generate
+          npm run generate && npm run build
       - name: Publish to Gemfury
         run: npm publish
         env:
