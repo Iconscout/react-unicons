@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@iconscout/react-unicons": {
+      "signature": "0ac09cd376f6bc889038720bc3a358c9",
+      "file": true
+    }
+  }
+}

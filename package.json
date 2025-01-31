@@ -2,21 +2,36 @@
   "name": "@iconscout/react-unicons",
   "version": "2.2.3",
   "description": "4,500+ vector icons as easy to use React Components",
-  "main": "./lib/cjs/index.js",
-  "module": "./index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./icons/*": {
+      "types": "./dist/icons/*.d.ts",
+      "import": "./dist/icons/*.mjs",
+      "require": "./dist/icons/*.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
-    "generate": "node ./build/generate.js && webpack"
+    "generate": "node ./build/generate.js",
+    "dev": "tsup --watch",
+    "build": "tsup"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Iconscout/react-unicons.git"
   },
   "peerDependencies": {
-    "react": ">=15.0.0 <17.0.0"
-  },
-  "dependencies": {
-    "react": ">=15.0.0 <17.0.0"
+    "react": ">=16.0.0"
   },
   "keywords": [
     "unicons",
@@ -34,10 +49,11 @@
   "homepage": "https://iconscout.com/unicons",
   "devDependencies": {
     "@iconscout/unicons": "^4.2.0",
+    "@types/react": "^16.14.62",
     "cheerio": "^1.0.0",
-    "fs-plus": "^3.1.1",
-    "uppercamelcase": "^3.0.0",
-    "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4"
+    "fs-extra": "^11.3.0",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
+    "uppercamelcase": "^3.0.0"
   }
 }
