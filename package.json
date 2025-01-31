@@ -51,7 +51,7 @@
     "@iconscout/unicons": "^4.2.0",
     "@types/react": "^16.14.62",
     "cheerio": "^1.0.0",
-    "fs-plus": "^3.1.1",
+    "fs-extra": "^11.3.0",
     "tsup": "^8.3.6",
     "typescript": "^5.7.3",
     "uppercamelcase": "^3.0.0"
