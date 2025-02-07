@@ -1,6 +1,6 @@
 {
   "name": "@iconscout/react-unicons",
-  "version": "2.2.2",
+  "version": "2.2.4",
   "description": "4,500+ vector icons as easy to use React Components",
   "main": "./lib/cjs/index.js",
   "module": "./index.js",
