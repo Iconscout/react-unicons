@@ -33,7 +33,7 @@
   },
   "homepage": "https://iconscout.com/unicons",
   "devDependencies": {
-    "@iconscout/unicons": "^4.0.7",
+    "@iconscout/unicons": "^4.2.0",
     "cheerio": "^1.0.0",
     "fs-plus": "^3.1.1",
     "uppercamelcase": "^3.0.0",
