@@ -13,44 +13,42 @@ fs.mkdirSync(iconsComponentPath)
 
 const indexJs = []
 
-uniconsConfig.forEach(icon => {
+uniconsConfig.forEach((icon) => {
   const baseName = `uil-${icon.name}`
   const location = path.join(iconsComponentPath, `${baseName}.js`)
   const name = upperCamelCase(baseName)
-  const svgFile = fs.readFileSync(path.resolve('node_modules/@iconscout/unicons', icon.svg), 'utf-8')
+  const svgFile = fs.readFileSync(
+    path.resolve('node_modules/@iconscout/unicons', icon.svg),
+    'utf-8'
+  )
 
   let data = svgFile.replace(/<svg[^>]+>/gi, '').replace(/<\/svg>/gi, '')
   // Get Path Content from SVG
   const $ = cheerio.load(data, {
-    xmlMode: true
+    xmlMode: true,
   })
   const svgPath = $('path').attr('d')
 
   const template = `import React from 'react';
 import PropTypes from 'prop-types';
 
-const ${name} = (props) => {
-  const { color, size, ...otherProps } = props
-  return React.createElement('svg', {
-    xmlns: 'http://www.w3.org/2000/svg',
-    width: size,
-    height: size,
-    viewBox: '0 0 24 24',
-    fill: color,
-    ...otherProps
-  }, React.createElement('path', {
-    d: '${svgPath}'
-  }));
-};
+const ${name} = ({ color = 'currentColor', size = 24, ...otherProps }) =>
+  React.createElement(
+    'svg',
+    {
+      xmlns: 'http://www.w3.org/2000/svg',
+      width: size,
+      height: size,
+      viewBox: '0 0 24 24',
+      fill: color,
+      ...otherProps
+    },
+    React.createElement('path', { d: '${svgPath}' })
+  );
 
 ${name}.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-${name}.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default ${name};`
